@@ -1,6 +1,13 @@
+import java.sql.Connection;
+
 public class Main {
     public static void main(String[] args) throws Exception {
-        VentanaPrincipal ventana = new VentanaPrincipal();
-        ventana.setVisible(true);
+        
+        ConexionBBDD conexion = new ConexionBBDD();
+        Connection conexionBD = conexion.conexion();
+        if (conexionBD != null) {
+            VentanaPrincipal ventana = new VentanaPrincipal();
+            ventana.setVisible(true);
+        }
     }
 }
