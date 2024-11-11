@@ -93,10 +93,6 @@ public class Contacto extends JFrame {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al guardar el registro " + e, "Error de conexión", JOptionPane.ERROR_MESSAGE);
         }
-        
-                
-        
-
 
         JOptionPane.showMessageDialog(null, "Registro guardado con éxito", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
 

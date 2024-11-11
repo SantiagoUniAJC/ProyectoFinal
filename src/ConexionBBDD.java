@@ -9,7 +9,7 @@ public class ConexionBBDD {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://localhost:3307/ProyectoFinal?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Bogota", "root", "root");
 
-            JOptionPane.showMessageDialog(null, "Conexión a la base de datos realizada con éxito", "Conexión exitosa", JOptionPane.INFORMATION_MESSAGE);
+            // JOptionPane.showMessageDialog(null, "Conexión a la base de datos realizada con éxito", "Conexión exitosa", JOptionPane.INFORMATION_MESSAGE);
             
         } catch (SQLException error) {
 

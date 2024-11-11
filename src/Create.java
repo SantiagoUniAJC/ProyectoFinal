@@ -89,7 +89,6 @@ public class Create extends JFrame {
             contacto.setVisible(true);
         });
 
-        setVisible(false);       
-        
+        setVisible(false);          
     }
 }

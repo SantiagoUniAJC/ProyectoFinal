@@ -14,20 +14,18 @@ public class Read extends JFrame {
 
     public Read() {
         setTitle("Ventana de Consulta de Datos");
-        setSize(620, 500);
+        setSize(820, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null);
 
-        String[] columnas = {"ID", "Nombre", "Apellidos", "Documento", "Fecha de Nacimiento", "Direccion", "Telefono", "Email", "Ciudad"};
+        String[] columnas = {"ID", "Nombre", "Apellidos", "Documento", "Fecha de Nacimiento", "Direccion", "Telefono", "Email", "Ciudad", " ", " "};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
         tabla = new JTable(modelo);
-        tabla.setBounds(10, 10, 380, 250);
-        add(tabla);
 
         JScrollPane scrollPane = new JScrollPane(tabla);
-        scrollPane.setBounds(10, 10, 580, 450);
+        scrollPane.setBounds(10, 10, 780, 450);
         add(scrollPane);
 
         mostrarDatos(modelo);        
@@ -45,10 +43,12 @@ public class Read extends JFrame {
             ResultSet resultado = statement.executeQuery(consultaSQL);
 
             while (resultado.next()) {
-                Object[] fila = new Object[9];
+                Object[] fila = new Object[11];
                 for (int i = 0; i < 9; i++) {
                     fila[i] = resultado.getObject(i + 1);
                 }
+                fila[9] = "Update";
+                fila[10] = "Delete";
                 modelo.addRow(fila);
             }
 
