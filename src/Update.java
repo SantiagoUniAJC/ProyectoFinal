@@ -188,8 +188,12 @@ public class Update extends JFrame {
             
             statement.close();
             conexion.conexion().close();
+            dispose();
             
-            System.out.println("Registro actualizado correctamente");
+            JOptionPane.showMessageDialog(null, "Registro actualizado correctamente");
+            
+            Read read = new Read();
+            read.setVisible(true);
             
         } catch (SQLException e) {
             System.out.println("Error al actualizar el registro: " + e.getMessage());
